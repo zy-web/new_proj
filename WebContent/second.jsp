@@ -28,8 +28,7 @@
         var E = window.wangEditor
         var editor1 = new E('#div1', '#div2')  // 两个参数也可以传入 elem 对象，class 选择器
         editor1.create()
-     
-         
+    
    editor.$textElem.attr('contenteditable',true)
      //禁用编辑功能(在创建之后)
        //editor.$textElem.attr('contenteditable',false)
