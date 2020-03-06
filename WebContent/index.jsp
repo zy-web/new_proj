@@ -43,7 +43,6 @@
              .ee{
           border:1px solid #cccc; 
            width:74.5%;
-           
            margin: auto;
            float: right;
              }
@@ -61,17 +60,33 @@
 <div id="cc">
 <span style="color:red; font-size: 25px;">今天天气回温了</span>
 </div>
-  <div  id="Editor" class="ee">
-        <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>
+  <div  id="div1" class="ee">
+   <!--初始化内容！-->
+       <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>
+  
     </div>
+    <button id="btn1">获取html</button>
+    <button id="btn2">获取text</button>
  <!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
 <script src="${pageContext.request.contextPath}/static/js/wangEditor.min.js"></script>
+
  <script type="text/javascript">
         var E = window.wangEditor
-        var editor = new E('#editor')
+        var editor = new E('#div1')
         // 或者 var editor = new E( document.getElementById('editor') )
         editor.create()
-        // editor.$textElem.attr('contenteditable',false)
+       document.getElementById('btn1').addEventListener('click',function() {
+    	   var x=editor.txt.html();//读取html内容
+    	   alert(x); 
+          });   
+        document.getElementById('btn2').addEventListener('click',function() {
+     	   var y=editor.txt.text();
+     	   alert(y); 
+           });
+        
+        
+        //editor.txt.clear();
+         // editor.$textElem.attr('contenteditable',false)
     </script>
 </body>
 </html>
